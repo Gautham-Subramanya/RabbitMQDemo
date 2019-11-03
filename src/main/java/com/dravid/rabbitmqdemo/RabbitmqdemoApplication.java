@@ -20,8 +20,8 @@ public class RabbitmqdemoApplication implements CommandLineRunner {
 	public void run(String... args) throws Exception {
 		SimpleMessage simpleMessage = new SimpleMessage();
 		simpleMessage.setName("Gautham");
-		simpleMessage.setName("Fan of Dravid");
+		simpleMessage.setDescription("Die Hard Fan of Dravid");
 		//rabbitTemplate.convertAndSend("testexchange", "testrouting", simpleMessage);
-		rabbitTemplate.convertAndSend("testexchange", "testrouting", simpleMessage);
+		rabbitTemplate.convertAndSend("MyTopicExchange", "topic", simpleMessage);
 	}
 }
